@@ -1,0 +1,18 @@
+server:
+  port: 2930
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lee-xs/cloud-demo/tree/master/SpringCloudConfig/
+          search-paths: respo
+          #username:
+          #password:
+      label: master
+
+
