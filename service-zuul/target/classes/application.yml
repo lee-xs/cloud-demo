@@ -1,0 +1,20 @@
+server:
+  port: 2929
+
+spring:
+  application:
+    name: service-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:2922/eureka
+zuul:
+  routes:
+    service-ribbon:
+      path: /api-a/**
+      serviceId: service-ribbon
+    service-feign:
+      path: /api-b/**
+      serviceId: service-feign
+  #strip-prefix: false

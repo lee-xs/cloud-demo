@@ -1,0 +1,39 @@
+server:
+  port: 2931
+
+spring:
+  application:
+    name: config-client
+  cloud:
+    #git 相关
+    config:
+      label: master
+      profile: dev
+      #uri: http://127.0.0.1:2930/
+      discovery:
+        enabled: true
+        service-id: config-server
+
+    #bus 刷新配置
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:2922/eureka
+
+#客户端不开放这个更新接口，在server端开放
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: bus-refresh

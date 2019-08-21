@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-server" />
         <module name="config-server" />
+        <module name="config-client" />
         <module name="service-feign" />
         <module name="consumer-demo" />
         <module name="user-service" />
@@ -18,6 +19,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-client" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="consumer-demo" options="-parameters" />
       <module name="eureka-server" options="-parameters" />

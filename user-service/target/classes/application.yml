@@ -1,0 +1,23 @@
+server:
+  port: 2924
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud
+    username: root
+    password: 123456
+
+mybatis:
+  type-aliases-package: cn.lixinblog.user.pojo
+
+logging:
+  level:
+    cn.lixinblog.user.mapper: DEBUG
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:2922/eureka
